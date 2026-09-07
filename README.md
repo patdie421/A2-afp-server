@@ -6,24 +6,26 @@ Here are some planned features:
 * Appletalk Laserwriter emulation (print to PDF file)
 * Mail server for Apple IIgs (https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md)
 * http proxy for HTML conversion
-  
-Install Rasberry OS lite version (no desktop)
-   create image disk
-      Enable SSH connection
+The server will be installed on Raspberry OS
 
-Boot Raspberry with SDCARD
-
-Update OS
-Update settings
-
+# OS configuration
+## SDCARD creation
+* install Rasberry OS lite version (no desktop)
+* create image disk
+* Enable SSH connection
+## OS preparation
+* Boot Raspberry with SDCARD
+* Update OS
+* Update settings
 (check avahi-daemon and install if not present : sudo apt-get install avahi-daemon)
-
-add netatalk
-
+## AFP file server
+* install netatalk
 $ sudo apt-get install netatalk
-
-add samba
-
+afp.conf file
+## SMB file server
+* install samba
 $ sudo apt-get install samba
+smb.conf file
+
 
 
