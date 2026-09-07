@@ -27,7 +27,7 @@ afp.conf file
 ## SMB file server
 * install samba
 ```
-$ sudo apt-get install samba
+$ sudo apt-get install samba samba-vfs-modules
 ```
 Must be added in smb.conf file
 ```
