@@ -1,3 +1,11 @@
+The goal of this project is to create a server capable of "interconnecting" old Apple II computers with the modern world.  
+  
+Here are some planned features:  
+* AFP file sharing
+* SMB file sharing for SMB FST for GS/OS + Marinetti (Uthernet II)
+* Appletalk Laserwriter emulation (print to PDF file)
+* Mail server for Apple IIgs (https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md)
+
 Install Rasberry OS lite version (no desktop)
    create image disk
       Enable SSH connection
