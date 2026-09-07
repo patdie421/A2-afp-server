@@ -1,7 +1,7 @@
 The goal of this project is to create a server capable of "interconnecting" old Apple II computers with the modern world.  
   
 Here are some planned features:  
-* AFP file sharing over ethertalk (conversion to localtalk must be done with "LocalTalk Bridge 2.1" or hardware solution)
+* AFP file sharing over ethertalk (conversion to localtalk must be done with "LocalTalk Bridge 2.1" or hardware solution like "AsanteTalk ethernet-serial LocalTalk bridge")
 * SMB file sharing for SMB FST for GS/OS + Marinetti (Uthernet II)
 * Appletalk Laserwriter emulation (print to PDF file)
 * Mail server for Apple IIgs (https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md)
