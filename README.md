@@ -20,11 +20,15 @@ The server will be installed on Raspberry OS
 (check avahi-daemon and install if not present : sudo apt-get install avahi-daemon)
 ## AFP file server
 * install netatalk
+```
 $ sudo apt-get install netatalk
+```
 afp.conf file
 ## SMB file server
 * install samba
+```
 $ sudo apt-get install samba
+```
 smb.conf file
 
 
