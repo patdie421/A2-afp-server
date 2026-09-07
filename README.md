@@ -29,7 +29,12 @@ afp.conf file
 ```
 $ sudo apt-get install samba
 ```
-smb.conf file
+Must be added in smb.conf file
+```
+[global]
+vfs objects = catia fruit streams_xattr
+fruit:encoding = native
+```
 
 
 
