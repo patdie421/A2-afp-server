@@ -5,7 +5,8 @@ Here are some planned features:
 * SMB file sharing for SMB FST for GS/OS + Marinetti (Uthernet II)
 * Appletalk Laserwriter emulation (print to PDF file)
 * Mail server for Apple IIgs (https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md)
-
+* http proxy for HTML conversion
+  
 Install Rasberry OS lite version (no desktop)
    create image disk
       Enable SSH connection
