@@ -35,6 +35,8 @@ Must be added in smb.conf file
 vfs objects = catia fruit streams_xattr
 fruit:encoding = native
 ```
+* install cups and cups-pdf
+
 
 
 
