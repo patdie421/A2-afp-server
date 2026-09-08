@@ -37,6 +37,39 @@ fruit:encoding = native
 ```
 * install cups and cups-pdf
 
+* redirect 9100 to queue
+
+redirect to lp (port 515)
+```
+sudo iptables -t nat -A PREROUTING -p tcp --dport 9100 -j REDIRECT --to-ports 515
+```
+
+redirect to lp queue  
+Configuration StepsUpdate Services FileAdd a custom service name to /etc/services:
+```
+jetdirect 9100/tcp        # HP JetDirect/AppSocket
+```
+
+Create the xinetd Configuration  
+Create a file named /etc/xinetd.d/jetdirect with the following contents, replacing CUPS_PRINTER_NAME with your actual CUPS queue name:text
+```
+service jetdirect {
+    socket_type = stream
+    protocol    = tcp
+    wait        = no
+    user        = lp
+    server      = /usr/bin/lp
+    server_args = -d CUPS_PRINTER_NAME -o raw
+    disable     = no
+}
+```
+Utilisez le code avec précaution.  
+Restart Services  
+Restart xinetd and cups to apply the changes:
+```
+$ sudo systemctl restart xinetd
+$ sudo systemctl restart cups
+```
 
 
 
