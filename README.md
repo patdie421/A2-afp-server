@@ -35,9 +35,10 @@ Must be added in smb.conf file
 vfs objects = catia fruit streams_xattr
 fruit:encoding = native
 ```
-* install cups and cups-pdf
+# Printers
+## install cups and cups-pdf
 
-* redirect 9100 to PDF queue
+## redirect 9100 to PDF queue
 
 The socket unit listens on port 9100 and hands off the incoming connection to the service.  
 1. Create a new file named /etc/systemd/system/jetdirect-redirect.socket :
