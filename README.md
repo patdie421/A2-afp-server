@@ -24,7 +24,6 @@ The server will be installed on Raspberry OS
 ```
 $ sudo apt-get install netatalk
 ```
-afp.conf file
 ## SMB file server
 * install samba
 ```
