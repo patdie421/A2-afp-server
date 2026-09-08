@@ -37,40 +37,51 @@ fruit:encoding = native
 ```
 * install cups and cups-pdf
 
-* redirect 9100 to queue
+* redirect 9100 to PDF queue
 
-redirect to lp (port 515)
+The socket unit listens on port 9100 and hands off the incoming connection to the service.  
+1. Create a new file named /etc/systemd/system/jetdirect-redirect.socket :
 ```
-sudo iptables -t nat -A PREROUTING -p tcp --dport 9100 -j REDIRECT --to-ports 515
+[Unit]
+Description=Listen on port 9100 for JetDirect raw print stream
+[Socket]
+ListenStream=9100
+Accept=yes
+[Install]
+WantedBy=sockets.target
 ```
-
-redirect to lp queue  
-Update Services File  
-Add a custom service name to /etc/services:
+2. Create the systemd Service. 
+Because with an Accept=yes is used in the socket, systemd will look for an instantiated service file named@ symbol. This allows it to handle multiple concurrent connections.  
+Create a new file named /etc/systemd/system/jetdirect-redirect@.service :
 ```
-jetdirect 9100/tcp        # HP JetDirect/AppSocket
+[Unit]
+Description=Redirect JetDirect port 9100 stream to CUPS lp
+Documentation=man:lp(1)
+[Service]
+Type=simple
+ExecStart=/usr/bin/lp -d YOUR_CUPS_PRINTER_NAME -o raw
+StandardInput=socket
+StandardOutput=journal
+StandardError=journal
+[Install]
+WantedBy=multi-user.target
 ```
-
-Create the xinetd Configuration  
-Create a file named /etc/xinetd.d/jetdirect with the following contents, replacing CUPS_PRINTER_NAME with your actual CUPS queue name:text
+Important: Replace YOUR_CUPS_PRINTER_NAME with the exact name of your printer queue as it appears in CUPS (run lpstat -v to find it). The -o raw flag ensures CUPS passes the incoming data directly to the printer without filtering, which is typical for port 9100 printing. If you want CUPS to filter/render the incoming format, remove -o raw.    
+3. Reload and Enable the Services
+Run the following commands to reload the systemd manager configuration, enable the socket, and start it up:
 ```
-service jetdirect {
-    socket_type = stream
-    protocol    = tcp
-    wait        = no
-    user        = lp
-    server      = /usr/bin/lp
-    server_args = -d CUPS_PRINTER_NAME -o raw
-    disable     = no
-}
+# Reload systemd to recognize the new files
+sudo systemctl daemon-reload
+# Enable and start the socket (do not enable the @.service file)
+sudo systemctl enable jetdirect-redirect.socket
+sudo systemctl start jetdirect-redirect.socket
 ```
-Utilisez le code avec précaution.  
-Restart Services  
-Restart xinetd and cups to apply the changes:
+4. Verify the Setup  
+You can check if the socket is actively listening on port 9100 with this command:
 ```
-$ sudo systemctl restart xinetd
-$ sudo systemctl restart cups
+sudo ss -tlnp | grep 9100
 ```
-
-
-
+To test sending a print job from another machine, you can pipe a file directly using nc (netcat):  
+```
+nc RASPBERRY_PI_IP 9100 < testfile.prn
+```
