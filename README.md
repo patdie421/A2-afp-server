@@ -45,7 +45,8 @@ sudo iptables -t nat -A PREROUTING -p tcp --dport 9100 -j REDIRECT --to-ports 51
 ```
 
 redirect to lp queue  
-Configuration StepsUpdate Services FileAdd a custom service name to /etc/services:
+Update Services File  
+Add a custom service name to /etc/services:
 ```
 jetdirect 9100/tcp        # HP JetDirect/AppSocket
 ```
