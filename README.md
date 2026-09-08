@@ -84,5 +84,5 @@ sudo ss -tlnp | grep 9100
 ```
 To test sending a print job from another machine, you can pipe a file directly using nc (netcat):  
 ```
-nc RASPBERRY_PI_IP 9100 < testfile.prn
+nc -N RASPBERRY_PI_IP 9100 < testfile.prn
 ```
