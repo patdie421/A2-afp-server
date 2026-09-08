@@ -18,6 +18,7 @@ The server will be installed on Raspberry OS
 * Update OS
 * Update settings
 (check avahi-daemon and install if not present : sudo apt-get install avahi-daemon)
+# File sharing
 ## AFP file server
 * install netatalk
 ```
