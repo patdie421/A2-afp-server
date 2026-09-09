@@ -52,7 +52,7 @@ Accept=yes
 [Install]
 WantedBy=sockets.target
 ```
-2. Create the systemd Service. 
+2. Create the systemd Service  
 Because with an Accept=yes is used in the socket, systemd will look for an instantiated service file named@ symbol. This allows it to handle multiple concurrent connections.  
 Create a new file named /etc/systemd/system/jetdirect-redirect@.service :
 ```
@@ -70,7 +70,7 @@ WantedBy=multi-user.target
 ```
 Important: Replace YOUR_CUPS_PRINTER_NAME with the exact name of your printer queue as it appears in CUPS (run lpstat -v to find it). The -o raw flag ensures CUPS passes the incoming data directly to the printer without filtering, which is typical for port 9100 printing. If you want CUPS to filter/render the incoming format, remove -o raw.  
 
-3. Reload and Enable the Services
+Reload and Enable the Services
 Run the following commands to reload the systemd manager configuration, enable the socket, and start it up:
 ```
 # Reload systemd to recognize the new files
