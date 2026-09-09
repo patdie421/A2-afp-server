@@ -42,7 +42,7 @@ fruit:encoding = native
 ## redirect 9100 to PDF queue
 
 The socket unit listens on port 9100 and hands off the incoming connection to the service.  
-1. Create a new file named /etc/systemd/system/jetdirect-redirect.socket :
+1. Create a new file named `/etc/systemd/system/jetdirect-redirect.socket` :
 ```
 [Unit]
 Description=Listen on port 9100 for JetDirect raw print stream
@@ -54,7 +54,7 @@ WantedBy=sockets.target
 ```
 2. Create the systemd Service  
 Because with an Accept=yes is used in the socket, systemd will look for an instantiated service file named@ symbol. This allows it to handle multiple concurrent connections.  
-Create a new file named /etc/systemd/system/jetdirect-redirect@.service :
+Create a new file named `/etc/systemd/system/jetdirect-redirect@.service` :
 ```
 [Unit]
 Description=Redirect JetDirect port 9100 stream to CUPS lp
