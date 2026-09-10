@@ -72,7 +72,7 @@ StandardError=journal
 [Install]
 WantedBy=multi-user.target
 ```
-Important: The -o raw flag ensures CUPS passes the incoming data directly to the printer without filtering, which is typical for port 9100 printing. If you want CUPS to filter/render the incoming format, remove -o raw.  
+Important: The `-o raw` flag ensures CUPS passes the incoming data directly to the printer without filtering, which is typical for port 9100 printing.  
 
 3. Reload and Enable the Services
 Run the following commands to reload the systemd manager configuration, enable the socket, and start it up:
