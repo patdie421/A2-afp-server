@@ -18,7 +18,7 @@ The server will be installed on Raspberry OS
 * Boot Raspberry with SDCARD
 * Update OS
 * Update settings
-(check avahi-daemon and install if not present : sudo apt-get install avahi-daemon)
+(check avahi-daemon is up and running or install it if not present : sudo apt-get install avahi-daemon)
 # File sharing
 ## AFP file server
 * install netatalk
