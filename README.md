@@ -30,7 +30,7 @@ $ sudo apt-get install netatalk
 ```
 $ sudo apt-get install samba samba-vfs-modules
 ```
-Must be added in smb.conf file
+Add be added in smb.conf file :
 ```
 [global]
 vfs objects = catia fruit streams_xattr
