@@ -7,6 +7,7 @@ Here are some planned features:
 * Direct "raw" printer (JetDirect or AppSocket printing) for TreeHugger (https://krue.net/treehugger/) to PDF.
 * Mail server for Apple IIgs SAM2 mail client (https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md)
 * http proxy for HTML conversion
+
 The server will be installed on Raspberry OS
 
 # OS configuration
