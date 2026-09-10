@@ -51,7 +51,7 @@ vfs objects = catia fruit streams_xattr
 fruit:encoding = native
 ```
 # Printers
-## install cups and cups-pdf
+## cups and cups-pdf
 
 ## redirect 9100 to PDF queue
 
