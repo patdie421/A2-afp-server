@@ -55,7 +55,7 @@ Accept=yes
 WantedBy=sockets.target
 ```
 2. Create the systemd Service  
-Because with an Accept=yes is used in the socket, systemd will look for an instantiated service file named@ symbol. This allows it to handle multiple concurrent connections.  
+Because with an `Accept=yes` is used in the socket, systemd will look for an instantiated service file `named@` symbol. This allows it to handle multiple concurrent connections.  
 Create a new file named `/etc/systemd/system/jetdirect-redirect@.service` :
 ```
 [Unit]
