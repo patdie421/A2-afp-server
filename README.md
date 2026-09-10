@@ -25,13 +25,13 @@ The server will be installed on Raspberry OS
 mkdir -p /data/shares/data
 mkdir -p /data/shares/install
 mkdir -p /data/prints/PDF
+touch /data/shares/data/.protected ; chmod 000 /data/shares/data/.protected
+touch /data/shares/install/.protected ; chmod 000 /data/shares/install/.protected
+touch /data/prints/PDF/.protected ; chmod 000 /data/prints/PDF/.protected
 chown nobody:nogroup /data/shares/data /data/shares/install /data/prints/PDF
 chmod 777 /data/shares/data /data/shares/install /data/prints/PDF
 chmod g+s /data/shares/data /data/shares/install /data/prints/PDF
 chmod u+s /data/shares/data /data/shares/install /data/prints/PDF
-touch /data/shares/data/.protected ; chmod 000 /data/shares/data/.protected
-touch /data/shares/install/.protected ; chmod 000 /data/shares/install/.protected
-touch /data/prints/PDF/.protected ; chmod 000 /data/prints/PDF/.protected
 ```
 # File sharing
 ## AFP file server
