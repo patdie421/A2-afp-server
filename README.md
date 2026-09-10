@@ -64,7 +64,7 @@ Documentation=man:lp(1)
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/lp -d YOUR_CUPS_PRINTER_NAME -o raw
+ExecStart=/usr/bin/lp -d cups-pdf -o raw
 StandardInput=socket
 StandardOutput=journal
 StandardError=journal
@@ -90,5 +90,5 @@ sudo ss -tlnp | grep 9100
 ```
 To test sending a print job from another machine, you can pipe a file directly using nc (netcat):  
 ```
-nc -N RASPBERRY_PI_IP 9100 < testfile.ps
+nc -N RASPBERRY_PI_IP 9100 < postscripttestfile.ps
 ```
