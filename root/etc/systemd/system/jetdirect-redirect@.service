@@ -1,0 +1,13 @@
+[Unit]
+Description=Redirect JetDirect port 9100 stream to CUPS lp
+Documentation=man:lp(1)
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/lp -d cups-pdf -o raw
+StandardInput=socket
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
