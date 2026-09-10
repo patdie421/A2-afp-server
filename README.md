@@ -5,7 +5,7 @@ Here are some planned features:
 * SMB file sharing for SMB FST for GS/OS (https://github.com/sheumann/smbfst/tree/main) + Marinetti (Uthernet II) or modern computers
 * Appletalk Laserwriter emulation for printing to PDF file (cups + cups-pdf)
 * Direct "raw" printer (JetDirect or AppSocket printing) for TreeHugger (https://krue.net/treehugger/) to PDF.
-* Mail server for Apple IIgs (https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md)
+* Mail server for Apple IIgs SAM2 mail client (https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md)
 * http proxy for HTML conversion
 The server will be installed on Raspberry OS
 
