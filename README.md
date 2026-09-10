@@ -20,7 +20,7 @@ The server will be installed on Raspberry OS
 * Update settings
 (check avahi-daemon is up and running or install it if not present : sudo apt-get install avahi-daemon)
 ## File system preparation
-* create shares
+* create shared directories
 ```
 mkdir -p /data/shares/data
 mkdir -p /data/shares/install
