@@ -46,9 +46,11 @@ The socket unit listens on port 9100 and hands off the incoming connection to th
 ```
 [Unit]
 Description=Listen on port 9100 for JetDirect raw print stream
+
 [Socket]
 ListenStream=9100
 Accept=yes
+
 [Install]
 WantedBy=sockets.target
 ```
@@ -59,12 +61,14 @@ Create a new file named `/etc/systemd/system/jetdirect-redirect@.service` :
 [Unit]
 Description=Redirect JetDirect port 9100 stream to CUPS lp
 Documentation=man:lp(1)
+
 [Service]
 Type=simple
 ExecStart=/usr/bin/lp -d YOUR_CUPS_PRINTER_NAME -o raw
 StandardInput=socket
 StandardOutput=journal
 StandardError=journal
+
 [Install]
 WantedBy=multi-user.target
 ```
