@@ -4,7 +4,6 @@
 
 [Global]
 ; Global server settings
-hostname = vandee1afp
 
 [Homes]
 basedir regex = /home
