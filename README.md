@@ -61,11 +61,30 @@ Install samba:
 ```
 sudo apt-get install samba samba-vfs-modules
 ```
-Add to `smb.conf` file :
+Add to `smb.conf` file [global] section :
 ```
 [global]
 vfs objects = catia fruit streams_xattr
 fruit:encoding = native
+```
+Add shares to end of `smb.conf` file:
+```
+[install]
+   path = /data/install/
+   comment = install
+   read only = no
+   public = yes
+
+[data]
+   path = /data/data/
+   comment = data
+   read only = no
+   public = yes
+
+[pdf]
+   path = /data/printings/PDF/
+   read only = no
+   public = yes
 ```
 Restart smbd
 ```
