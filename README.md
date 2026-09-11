@@ -52,7 +52,10 @@ volume name = Data
 path = /data/prints/PDF
 volume name = PDF
 ```
-
+Restart netatalk
+```
+sudo systemctl restart netatalk
+```
 ## SMB file server
 * install samba
 ```
