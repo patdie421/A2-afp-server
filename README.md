@@ -93,9 +93,12 @@ sudo systemctl restart smbd
 
 # Printers
 ## cups and cups-pdf
+Install packages
 ```
 sudo apt-get install cups cups-pdf
-# create PDF queue
+```
+create PDF queue
+```
 sudo lpadmin -p cups-pdf -v cups-pdf:/ -E -P /usr/share/ppd/cups-pdf/CUPS-PDF.ppd
 ```
 after the queue creation, update `/etc/cups/cups-pdf.conf` with this minimum contents:
