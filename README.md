@@ -89,7 +89,7 @@ WantedBy=multi-user.target
 ```
 Important: The `-o raw` flag ensures CUPS passes the incoming data directly to the printer without filtering, which is typical for port 9100 printing.  
 
-3. Reload and Enable the Services
+3. Reload and Enable the Services  
 Run the following commands to reload the systemd manager configuration, enable the socket, and start it up:
 ```
 # Reload systemd to recognize the new files
