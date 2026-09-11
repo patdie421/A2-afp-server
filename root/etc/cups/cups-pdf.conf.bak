@@ -53,7 +53,6 @@
 ### Default: /var/spool/cups-pdf/${USER}
 
 #Out ${HOME}/PDF
-Out /data/printings/PDF
 
 ### Key: AnonDirName (config)
 ##  ABSOLUTE path for anonymously created PDF files
@@ -106,7 +105,7 @@ Out /data/printings/PDF
 ##  2: label all documents with a tailing "-job_#"
 ### Default: 0
 
-Label 1
+#Label 0
 
 ### Key: TitlePref (config, ppd, lpoptions)
 ##  where to look first for a title when creating the output filename
@@ -189,7 +188,6 @@ Label 1
 ### Default: 0077
 
 #UserUMask 0077
-UserUMask 0000
 
 ### Key: Grp (config)
 ##  group cups-pdf is supposed to run as - this will also be the gid for all
