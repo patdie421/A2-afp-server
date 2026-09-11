@@ -57,9 +57,9 @@ Restart netatalk
 sudo systemctl restart netatalk
 ```
 ## SMB file server
-* install samba
+Install samba:
 ```
-$ sudo apt-get install samba samba-vfs-modules
+sudo apt-get install samba samba-vfs-modules
 ```
 Add to `smb.conf` file :
 ```
@@ -67,6 +67,11 @@ Add to `smb.conf` file :
 vfs objects = catia fruit streams_xattr
 fruit:encoding = native
 ```
+Restart smbd
+```
+sudo systemctl restart smbd
+```
+
 # Printers
 ## cups and cups-pdf
 ```
