@@ -9,14 +9,6 @@ hostname = vandee1afp
 [Homes]
 basedir regex = /home
 
-[install]
-path = /data/install
-volume name = Install
-
-[data]
-path = /data/data
-volume name = Data
-
 ; [my volume]
 ; path = /path/to/volume
 ; volume name = My AFP Volume
