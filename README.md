@@ -40,6 +40,10 @@ chmod u+s /data/shares/data /data/shares/install /data/prints/PDF
 ```
 $ sudo apt-get install netatalk
 ```
+Add shared directories
+```
+```
+
 ## SMB file server
 * install samba
 ```
