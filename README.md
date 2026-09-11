@@ -58,7 +58,7 @@ sudo apt-get install cups cups-pdf
 # create PDF queue
 sudo lpadmin -p cups-pdf -v cups-pdf:/ -E -P /usr/share/ppd/cups-pdf/CUPS-PDF.ppd
 ```
-minimun content of `/etc/cups/cups-pdf.conf` file:
+after the queue creation, update `/etc/cups/cups-pdf.conf` with this minimum contents:
 ```
 Out /data/printings/PDF
 Label 1
