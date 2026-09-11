@@ -40,8 +40,17 @@ chmod u+s /data/shares/data /data/shares/install /data/prints/PDF
 ```
 $ sudo apt-get install netatalk
 ```
-Add shared directories
+Add shared directories to `afp.conf`:
 ```
+[install]
+path = /data/shares/install
+volume name = Install
+[data]
+path = /data/shares/data
+volume name = Data
+[pdf]
+path = /data/prints/PDF
+volume name = PDF
 ```
 
 ## SMB file server
