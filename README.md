@@ -25,16 +25,16 @@ The server will be installed on Raspberry OS
 ## File system preparation
 create shared directories
 ```
-mkdir -p /data/shares/data
-mkdir -p /data/shares/install
-mkdir -p /data/prints/PDF
-touch /data/shares/data/.protected ; chmod 000 /data/shares/data/.protected
-touch /data/shares/install/.protected ; chmod 000 /data/shares/install/.protected
-touch /data/prints/PDF/.protected ; chmod 000 /data/prints/PDF/.protected
-chown nobody:nogroup /data/shares/data /data/shares/install /data/prints/PDF
-chmod 777 /data/shares/data /data/shares/install /data/prints/PDF
-chmod g+s /data/shares/data /data/shares/install /data/prints/PDF
-chmod u+s /data/shares/data /data/shares/install /data/prints/PDF
+sudo mkdir -p /data/shares/data
+sudo mkdir -p /data/shares/install
+sudo mkdir -p /data/prints/PDF
+sudo touch /data/shares/data/.protected ; chmod 000 /data/shares/data/.protected
+sudo touch /data/shares/install/.protected ; chmod 000 /data/shares/install/.protected
+sudo touch /data/prints/PDF/.protected ; chmod 000 /data/prints/PDF/.protected
+sudo chown nobody:nogroup /data/shares/data /data/shares/install /data/prints/PDF
+sudo chmod 777 /data/shares/data /data/shares/install /data/prints/PDF
+sudo chmod g+s /data/shares/data /data/shares/install /data/prints/PDF
+sudo chmod u+s /data/shares/data /data/shares/install /data/prints/PDF
 ```
 # File sharing
 ## AFP file server
