@@ -13,6 +13,7 @@ The server will be installed on Raspberry OS
 # OS configuration
 ## SDCARD creation
 * install Rasberry OS lite version (no desktop)
+* Connect to WIFI
 * Enable SSH connection
 * create image disk
 ## OS preparation
