@@ -2,11 +2,11 @@ The goal of this project is to create a server capable of "interconnecting" old 
   
 Here are some planned features:  
 * AFP file sharing over ethertalk (conversion to localtalk must be done with MacOS "LocalTalk Bridge 2.1" or hardware solution like "AsanteTalk ethernet-serial LocalTalk bridge" or "Farallon EtherMac iPrint") [done]
-* SMB file sharing for SMB FST for GS/OS (https://github.com/sheumann/smbfst/tree/main) + Marinetti (Uthernet II) or modern computers
-* Appletalk Laserwriter emulation for printing to PDF file (cups + cups-pdf).
-* Direct "raw" printer (JetDirect or AppSocket printing) for TreeHugger (https://krue.net/treehugger/) to PDF.
-* Mail server for Apple IIgs SAM2 mail client (https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md).
-* Web proxy for HTTPS/HTTP conversion and HTML simplification (https://github.com/rdmark/macproxy_classic).
+* SMB file sharing for SMB FST for GS/OS (https://github.com/sheumann/smbfst/tree/main) + Marinetti (Uthernet II) or modern computers [done].
+* Appletalk Laserwriter emulation for printing to PDF file (cups + cups-pdf) [done].
+* Direct "raw" printer (JetDirect or AppSocket printing) for TreeHugger (https://krue.net/treehugger/) to PDF [done].
+* Mail server for Apple IIgs SAM2 mail client (https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md) [to do].
+* Web proxy for HTTPS/HTTP conversion and HTML simplification (https://github.com/rdmark/macproxy_classic) [to do].
 
 The server will be installed on Raspberry OS
 
