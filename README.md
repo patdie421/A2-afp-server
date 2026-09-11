@@ -58,7 +58,14 @@ sudo apt-get install cups cups-pdf
 # create PDF queue
 sudo lpadmin -p cups-pdf -v cups-pdf:/ -E -P /usr/share/ppd/cups-pdf/CUPS-PDF.ppd
 ```
-
+minimun content of `/etc/cups/cups-pdf.conf` file:
+```
+Out /data/printings/PDF
+Label 1
+UserUMask 0000
+Grp lpadmin
+DecodeHexStrings 1
+```
 ## redirect 9100 to PDF queue
 
 The socket unit listens on port 9100 and hands off the incoming connection to the service.  
