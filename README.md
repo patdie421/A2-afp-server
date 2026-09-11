@@ -13,12 +13,12 @@ The server will be installed on Raspberry OS
 # OS configuration
 ## SDCARD creation
 * install Rasberry OS lite version (no desktop)
-* Mandatory configuration before burning the image on SD Card
+* Mandatory configuration before burning the image on SDCard
 1. WIFI Configuration
 2. Enable SSH connection
-* write image disk on SD Card
+* write image disk on SDCard
 ## OS preparation
-* Boot Raspberry with SDCARD
+* Boot Raspberry with SDCard
 * Update OS
 * Update settings
 (check avahi-daemon is up and running or install it if not present : sudo apt-get install avahi-daemon)
