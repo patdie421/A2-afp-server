@@ -111,6 +111,7 @@ UserUMask 0000
 Grp lpadmin
 DecodeHexStrings 1
 ```
+Restart netatalk to resync cups printers.
 ## redirect 9100 to PDF queue
 
 The socket unit listens on port 9100 and hands off the incoming connection to the service.  
