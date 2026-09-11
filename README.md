@@ -70,13 +70,13 @@ fruit:encoding = native
 Add shares to end of `smb.conf` file:
 ```
 [install]
-   path = /data/install/
+   path = /data/shares/install/
    comment = install
    read only = no
    public = yes
 
 [data]
-   path = /data/data/
+   path = /data/shares/data/
    comment = data
    read only = no
    public = yes
