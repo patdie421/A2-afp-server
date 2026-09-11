@@ -55,6 +55,7 @@ fruit:encoding = native
 ## cups and cups-pdf
 ```
 sudo apt-get install cups cups-pdf
+# create PDF queue
 sudo lpadmin -p cups-pdf -v cups-pdf:/ -E -P /usr/share/ppd/cups-pdf/CUPS-PDF.ppd
 ```
 
