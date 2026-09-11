@@ -13,9 +13,10 @@ The server will be installed on Raspberry OS
 # OS configuration
 ## SDCARD creation
 * install Rasberry OS lite version (no desktop)
-* Connect to WIFI
-* Enable SSH connection
-* create image disk
+* Mandatory configuration before burning the image on SD Card
+1. Connect to WIFI
+2. Enable SSH connection
+* write image disk on SD Card
 ## OS preparation
 * Boot Raspberry with SDCARD
 * Update OS
