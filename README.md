@@ -53,6 +53,10 @@ fruit:encoding = native
 ```
 # Printers
 ## cups and cups-pdf
+```
+sudo apt-get install cups cups-pdf
+sudo lpadmin -p cups-pdf -v cups-pdf:/ -E -P /usr/share/ppd/cups-pdf/CUPS-PDF.ppd
+```
 
 ## redirect 9100 to PDF queue
 
