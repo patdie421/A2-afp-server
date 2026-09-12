@@ -109,7 +109,7 @@ sudo smbpasswd -a <username>
 ## cups and cups-pdf
 Install packages
 ```
-sudo apt-get install cups cups-pdf
+sudo apt-get install cups printer-driver-cups-pdf
 ```
 create PDF queue
 ```
