@@ -193,3 +193,13 @@ nc -N RASPBERRY_PI_IP 9100 < postscripttestfile.ps
 # Mail server
 google app password: https://myaccount.google.com/apppasswords
 
+## postfix
+
+create ```/etc/aliases```
+
+```
+postalias /etc/aliases
+```
+
+
+
