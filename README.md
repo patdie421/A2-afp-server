@@ -93,7 +93,7 @@ Add shares to end of `smb.conf` file:
    public = yes
 
 [pdf]
-   path = /data/printings/PDF/
+   path = /data/prints/PDF/
    read only = no
    public = yes
 ```
@@ -111,18 +111,26 @@ Install packages
 ```
 sudo apt-get install cups printer-driver-cups-pdf
 ```
-create PDF queue
+Update `/etc/cups/cupsd.conf`
 ```
-sudo lpadmin -p cups-pdf -v cups-pdf:/ -E -P /usr/share/ppd/cups-pdf/CUPS-PDF.ppd
+#Listen localhost:631
+Port 631
+Browsing On
 ```
-after the queue creation, update `/etc/cups/cups-pdf.conf` with this minimum contents:
+Update `/etc/cups/cups-pdf.conf`
 ```
-Out /data/printings/PDF
+Out /data/prints/PDF
 Label 1
 UserUMask 0000
 Grp lpadmin
 DecodeHexStrings 1
 ```
+Update `/etc/cups/printers.conf`
+```
+Info LaserWriter-PDF
+Shared Yes
+```
+
 Restart netatalk to resync cups printers.
 ## redirect 9100 to PDF queue
 
