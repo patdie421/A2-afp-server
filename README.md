@@ -111,13 +111,13 @@ Install packages
 ```
 sudo apt-get install cups printer-driver-cups-pdf
 ```
-Update `/etc/cups/cupsd.conf`
+add or modify lines in `/etc/cups/cupsd.conf`
 ```
 #Listen localhost:631
 Port 631
 Browsing On
 ```
-Update `/etc/cups/cups-pdf.conf`
+add or modify lines in `/etc/cups/cups-pdf.conf`
 ```
 Out /data/prints/PDF
 Label 1
@@ -125,7 +125,7 @@ UserUMask 0000
 Grp lpadmin
 DecodeHexStrings 1
 ```
-Update `/etc/cups/printers.conf`
+add or modify lines in `/etc/cups/printers.conf`
 ```
 Info LaserWriter-PDF
 Shared Yes
