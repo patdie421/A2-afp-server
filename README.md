@@ -162,7 +162,7 @@ Documentation=man:lp(1)
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/lp -d cups-pdf -o raw
+ExecStart=/usr/bin/lp -d LaserWriter-PDF -o raw
 StandardInput=socket
 StandardOutput=journal
 StandardError=journal
