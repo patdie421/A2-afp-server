@@ -96,7 +96,10 @@ Restart smbd
 ```
 sudo systemctl restart smbd
 ```
-
+Create smb password for users
+```
+sudo smbpasswd -a <username>
+```
 # Printers
 ## cups and cups-pdf
 Install packages
