@@ -46,6 +46,11 @@ install netatalk
 ```
 $ sudo apt-get install netatalk
 ```
+Add server name in global
+```
+[Global]
+hostname = vandee2.afp
+```
 Add shared directories to `afp.conf`:
 ```
 [install]
