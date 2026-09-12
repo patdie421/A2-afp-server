@@ -127,6 +127,7 @@ DecodeHexStrings 1
 ```
 add or modify lines in `/etc/cups/printers.conf`
 ```
+<DefaultPrinter LaserWriter-PDF>
 Info LaserWriter-PDF
 Shared Yes
 ```
