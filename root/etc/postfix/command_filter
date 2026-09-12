@@ -1,0 +1,10 @@
+/^Message-ID:.*$/ NOOP
+/^MIME-version:.*$/ NOOP
+/^Content-Type:.*$/ NOOP
+/^Content-transfer-encoding:.*$/ NOOP
+/^From:.*$/ NOOP
+/^To:.*$/ NOOP
+/^In-Reply-To:.*$/ NOOP
+/^Subject:.*$/ NOOP
+/^Date:.*$/ NOOP
+/^X-Mailer:.*$/ NOOP
