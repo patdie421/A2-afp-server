@@ -191,3 +191,5 @@ To test sending a print job from another machine, you can pipe a file directly u
 nc -N RASPBERRY_PI_IP 9100 < postscripttestfile.ps
 ```
 #Mail server
+google app password: https://myaccount.google.com/apppasswords
+
