@@ -130,8 +130,12 @@ Update `/etc/cups/printers.conf`
 Info LaserWriter-PDF
 Shared Yes
 ```
+Restart cups and netatalk to resync cups printers.
+```
+sudo systemctl restart cups
+sudo systemctl restart Netatalk
+```
 
-Restart netatalk to resync cups printers.
 ## redirect 9100 to PDF queue
 
 The socket unit listens on port 9100 and hands off the incoming connection to the service.  
