@@ -4,7 +4,9 @@ Documentation=man:lp(1)
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/lp -d cups-pdf -o raw
+# ExecStart=/usr/bin/lp -d LaserWriter-PDF -o raw
+# ExecStart=/usr/local/bin/gpcl6 -dNOSAFE -dNOPAUSE -LPCL  -sDEVICE=pdfwrite -sOutputFile=/data/prints/PDF/jetdirect.pdf -
+ExecStart=/usr/bin/bash /etc/pclprint.sh
 StandardInput=socket
 StandardOutput=journal
 StandardError=journal
