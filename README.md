@@ -148,7 +148,7 @@ make
 sudo make install
 ```
 ## pclprint script
-Add this script in /etc
+Add this script to `/etc` direction as `pclprint.sh`
 ```
 DATE=$(date +"%Y%m%d-%H%M%S")
 FILENAME=/data/prints/PDF/"jetdirect-$DATE".pdf
