@@ -4,7 +4,7 @@ Here are some planned features:
 * AFP file sharing over ethertalk (conversion to localtalk must be done with MacOS "LocalTalk Bridge 2.1" or hardware solution like "AsanteTalk ethernet-serial LocalTalk bridge" or "Farallon EtherMac iPrint") [done]
 * SMB file sharing for SMB FST for GS/OS (https://github.com/sheumann/smbfst/tree/main) + Marinetti (Uthernet II) or modern computers [done].
 * Appletalk Laserwriter emulation for printing to PDF file (cups + cups-pdf) [done].
-* Direct "raw" printer (JetDirect or AppSocket printing) for TreeHugger (https://krue.net/treehugger/) to PDF [done].
+* Direct "raw" printer (JetDirect or AppSocket printing) for TreeHugger (https://krue.net/treehugger/) to PDF (gpcl6) [done].
 * Mail server for Apple IIgs SAM2 mail client (https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md) [done].
 * Web proxy for HTTPS/HTTP conversion and HTML simplification (https://github.com/rdmark/macproxy_classic) [to do].
 
@@ -137,7 +137,28 @@ sudo systemctl restart cups
 sudo systemctl restart Netatalk
 ```
 
-## redirect 9100 to PDF queue
+## build gpcl6
+Download source: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases
+Get last release of `ghostpdl` (https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10080/ghostpdl-10.08.0.tar.gz)
+```
+tar xvzf ghostpdl-10.08.0.tar.gz
+cd ghostpdl-10.08.0
+./configure
+make
+sudo make install
+```
+## pclprint script
+Add this script in /etc
+```
+DATE=$(date +"%Y%m%d-%H%M%S")
+FILENAME=/data/prints/PDF/"jetdirect-$DATE".pdf
+
+/usr/local/bin/gpcl6 -dNOSAFE -dNOPAUSE -LPCL  -sDEVICE=pdfwrite -sOutputFile=$FILENAME -
+
+chmod 666 $FILENAME
+chown nobody:nogroup $FILENAME
+```
+## redirect 9100 to script
 
 The socket unit listens on port 9100 and hands off the incoming connection to the service.  
 1. Create a new file named `/etc/systemd/system/jetdirect-redirect.socket` :
@@ -162,7 +183,7 @@ Documentation=man:lp(1)
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/lp -d LaserWriter-PDF -o raw
+ExecStart=/usr/bin/bash /etc/pclprint.sh
 StandardInput=socket
 StandardOutput=journal
 StandardError=journal
