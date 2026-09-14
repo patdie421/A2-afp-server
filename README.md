@@ -249,4 +249,6 @@ sudo systemctl start dovecot
 ```
 ## fetchmail
 follow: https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md#fetchmail
+## multiple account
+update postfix/fectmail files as explained: https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md#postfix-configuration-for-multiple-gmail-accounts
 
