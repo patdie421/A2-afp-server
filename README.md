@@ -216,10 +216,11 @@ google app password: https://myaccount.google.com/apppasswords
 
 ## postfix
 Follow this guide: https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md  
-
-
-create ```/etc/aliases```
-
+After step https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md#restart-postfix create `/etc/aliases`:
+```
+patrice patrice.dietsch@gmail.com
+```
+create /etc/aliases.db:
 ```
 postalias /etc/aliases
 ```
