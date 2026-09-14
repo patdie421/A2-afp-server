@@ -213,9 +213,8 @@ nc -N RASPBERRY_PI_IP 9100 < postscripttestfile.ps
 ```
 # Mail server
 ## postfix
-Follow this guide: https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md  
-To get the google app app password: https://myaccount.google.com/apppasswords
-After step https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md#restart-postfix create `/etc/aliases`:
+1. Follow this guide: https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md  
+2. After step https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md#restart-postfix create `/etc/aliases`:
 ```
 <<username>>: <<name>>@gmail.com
 ```
@@ -223,12 +222,14 @@ create /etc/aliases.db:
 ```
 postalias /etc/aliases
 ```
-
-Create the directory /etc/postfix/sasl.
+3. Create the directory /etc/postfix/sasl.
 Create the file /etc/postfix/sasl/sasl_passwd as follows:
+```
+[smtp.gmail.com]:587 <<name>>@gmail.com:xxxx xxxx xxxx xxxx
+```
+where <<name>> is your Gmail account name and xxxx xxxx xxxx xxxx is the App Password Google gave you.
 
-[smtp.gmail.com]:587 username@gmail.com:xxxx xxxx xxxx xxxx
-where username is your Gmail account name and xxxx xxxx xxxx xxxx is the App Password Google gave you.
+To get the google app app password: https://myaccount.google.com/apppasswords  
 
 Run: sudo postmap /etc/postfix/sasl/sasl_passwd to build the hash file sasl_passwd.db.
 
