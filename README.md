@@ -238,13 +238,12 @@ sudo postmap /etc/postfix/sasl/sasl_passwd
 sudo systemctl restart postfix
 ```
 ## dovecot
-Follow: https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md#dovecot  
-
-in file `/etc/dovecot/conf.d/10-auth.conf` add or update `auth_allow_cleartext`:
+1. Follow: https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md#dovecot  
+2. in file `/etc/dovecot/conf.d/10-auth.conf` add or update `auth_allow_cleartext`:
 ```
 auth_allow_cleartext = yes
 ```
-restart dovecot
+3. restart dovecot
 ```
 sudo systemctl start dovecot
 ```
