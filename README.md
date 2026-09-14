@@ -238,7 +238,7 @@ sudo postmap /etc/postfix/sasl/sasl_passwd
 sudo systemctl restart postfix
 ```
 ## dovecot
-https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md#dovecot  
+Follow: https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md#dovecot  
 
 in file `/etc/dovecot/conf.d/10-auth.conf` add:
 ```
@@ -248,4 +248,6 @@ restart dovecot
 ```
 sudo systemctl start dovecot
 ```
+## fetchmail
+follow: https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md#fetchmail
 
