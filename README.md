@@ -136,8 +136,8 @@ Restart cups and netatalk to resync cups printers.
 sudo systemctl restart cups
 sudo systemctl restart Netatalk
 ```
-
-## build gpcl6
+## LaserJet emulation
+### build gpcl6
 Download source: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases
 Get last release of `ghostpdl` (https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10080/ghostpdl-10.08.0.tar.gz)
 ```
@@ -147,7 +147,7 @@ cd ghostpdl-10.08.0
 make
 sudo make install
 ```
-## pclprint script
+### pclprint script
 Add this script to `/etc` direction as `pclprint.sh`
 ```
 DATE=$(date +"%Y%m%d-%H%M%S")
@@ -158,7 +158,7 @@ FILENAME=/data/prints/PDF/"jetdirect-$DATE".pdf
 chmod 666 $FILENAME
 chown nobody:nogroup $FILENAME
 ```
-## redirect 9100 to script
+### redirect 9100 to script
 
 The socket unit listens on port 9100 and hands off the incoming connection to the service.  
 1. Create a new file named `/etc/systemd/system/jetdirect-redirect.socket` :
@@ -212,9 +212,12 @@ To test sending a print job from another machine, you can pipe a file directly u
 nc -N RASPBERRY_PI_IP 9100 < postscripttestfile.ps
 ```
 ## Apple IIgs configuration for TCPIP Printing
-TreeHugers. http://krue.net/treehugger/  
+### Treehugger
+TreeHugers. http://krue.net/treehugger/
+### LaserJet Driver (directJet socket)
 https://www.whatisthe2gs.apple2.org.za/files/Harmonie21/2Image/Harmonie.zip  
-https://www.whatisthe2gs.apple2.org.za/files/Harmonie21/Manual/Harmonie-Manual.pdf  
+https://www.whatisthe2gs.apple2.org.za/files/Harmonie21/Manual/Harmonie-Manual.pdf
+### Postscript (directJet socket)
 http://www.apple2works.com/directconnectpostscriptdriver/  
 
 # Mail server
