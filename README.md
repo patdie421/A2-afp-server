@@ -212,13 +212,12 @@ To test sending a print job from another machine, you can pipe a file directly u
 nc -N RASPBERRY_PI_IP 9100 < postscripttestfile.ps
 ```
 # Mail server
-google app password: https://myaccount.google.com/apppasswords
-
 ## postfix
 Follow this guide: https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md  
+To get the google app app password: https://myaccount.google.com/apppasswords
 After step https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md#restart-postfix create `/etc/aliases`:
 ```
-patrice patrice.dietsch@gmail.com
+<<username>>: <<name>>@gmail.com
 ```
 create /etc/aliases.db:
 ```
