@@ -227,7 +227,7 @@ postalias /etc/aliases
 ```
 [smtp.gmail.com]:587 <<name>>@gmail.com:xxxx xxxx xxxx xxxx
 ```
-where <<name>> is your Gmail account name and xxxx xxxx xxxx xxxx is the App Password Google gave you.  
+where `<<name>>` is your Gmail account name and xxxx xxxx xxxx xxxx is the App Password Google gave you.  
 To get the google app app password: https://myaccount.google.com/apppasswords  
 to build the hash file `sasl_passwd.db`, run:
 ```
