@@ -147,7 +147,7 @@ cd ghostpdl-10.08.0
 make
 sudo make install
 ```
-### pclprint script
+### pclprint.sh script
 Add this script to `/etc` direction as `pclprint.sh`
 ```
 DATE=$(date +"%Y%m%d-%H%M%S")
@@ -179,7 +179,6 @@ Create a new file named `/etc/systemd/system/jetdirect-redirect@.service` :
 ```
 [Unit]
 Description=Redirect JetDirect port 9100 stream to CUPS lp
-Documentation=man:lp(1)
 
 [Service]
 Type=simple
@@ -207,9 +206,58 @@ You can check if the socket is actively listening on port 9100 with this command
 ```
 sudo ss -tlnp | grep 9100
 ```
+## generic PS emulation
+redirection to cups PDF queue
+### redirect 9101 to cpus
+The socket unit listens on port 9101 and hands off the incoming connection to the service.  
+1. Create a new file named `/etc/systemd/system/jetdirect-ps-redirect.socket` :
+```
+[Unit]
+Description=Listen on port 9101 for JetDirect raw print stream
+
+[Socket]
+ListenStream=9101
+Accept=yes
+
+[Install]
+WantedBy=sockets.target
+```
+2. Create the systemd Service  
+Because with an `Accept=yes` is used in the socket, systemd will look for an instantiated service file `named@` symbol. This allows it to handle multiple concurrent connections.  
+Create a new file named `/etc/systemd/system/jetdirect-ps-redirect@.service` :
+```
+[Unit]
+Description=Redirect JetDirect port 9101 stream to CUPS lp
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/lp -d LaserWriter-PDF -o raw
+StandardInput=socket
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+```
+Important: The `-o raw` flag ensures CUPS passes the incoming data directly to the printer without filtering, which is typical for port 9101 printing.  
+
+3. Reload and Enable the Services  
+Run the following commands to reload the systemd manager configuration, enable the socket, and start it up:
+```
+# Reload systemd to recognize the new files
+sudo systemctl daemon-reload
+# Enable and start the socket (do not enable the @.service file)
+sudo systemctl enable jetdirect-redirect.socket
+sudo systemctl start jetdirect-redirect.socket
+```
+4. Verify the Setup  
+You can check if the socket is actively listening on port 9101 with this command:
+```
+sudo ss -tlnp | grep 9101
+```
 To test sending a print job from another machine, you can pipe a file directly using nc (netcat):  
 ```
-nc -N RASPBERRY_PI_IP 9100 < postscripttestfile.ps
+nc -N RASPBERRY_PI_IP 9101 < postscripttestfile.ps
 ```
 ## Apple IIgs configuration for TCPIP Printing
 ### Treehugger
