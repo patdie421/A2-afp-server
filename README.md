@@ -235,7 +235,7 @@ sudo postmap /etc/postfix/sasl/sasl_passwd
 ```
 6. Now restart postfix
 ```
-sudo systemctl restart postfix`
+sudo systemctl restart postfix
 ```
 ## dovecot
 https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md#dovecot  
