@@ -190,8 +190,6 @@ StandardError=journal
 [Install]
 WantedBy=multi-user.target
 ```
-Important: The `-o raw` flag ensures CUPS passes the incoming data directly to the printer without filtering, which is typical for port 9100 printing.  
-
 3. Reload and Enable the Services  
 Run the following commands to reload the systemd manager configuration, enable the socket, and start it up:
 ```
@@ -247,8 +245,8 @@ Run the following commands to reload the systemd manager configuration, enable t
 # Reload systemd to recognize the new files
 sudo systemctl daemon-reload
 # Enable and start the socket (do not enable the @.service file)
-sudo systemctl enable jetdirect-redirect.socket
-sudo systemctl start jetdirect-redirect.socket
+sudo systemctl enable jetdirect-ps-redirect.socket
+sudo systemctl start jetdirect-ps-redirect.socket
 ```
 4. Verify the Setup  
 You can check if the socket is actively listening on port 9101 with this command:
@@ -267,7 +265,6 @@ https://www.whatisthe2gs.apple2.org.za/files/Harmonie21/2Image/Harmonie.zip
 https://www.whatisthe2gs.apple2.org.za/files/Harmonie21/Manual/Harmonie-Manual.pdf
 ### Postscript (directJet socket)
 http://www.apple2works.com/directconnectpostscriptdriver/  
-
 # Mail server
 ## postfix
 1. Follow this guide: https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md  
