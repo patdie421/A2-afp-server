@@ -244,5 +244,8 @@ in file `/etc/dovecot/conf.d/10-auth.conf` add:
 ```
 auth_allow_cleartext = yes
 ```
-
+restart dovecot
+```
+sudo systemctl start dovecot
+```
 
