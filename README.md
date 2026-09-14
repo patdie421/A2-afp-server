@@ -215,12 +215,22 @@ nc -N RASPBERRY_PI_IP 9100 < postscripttestfile.ps
 google app password: https://myaccount.google.com/apppasswords
 
 ## postfix
+Follow this guide: https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md  
+
 
 create ```/etc/aliases```
 
 ```
 postalias /etc/aliases
 ```
+
+Create the directory /etc/postfix/sasl.
+Create the file /etc/postfix/sasl/sasl_passwd as follows:
+
+[smtp.gmail.com]:587 username@gmail.com:xxxx xxxx xxxx xxxx
+where username is your Gmail account name and xxxx xxxx xxxx xxxx is the App Password Google gave you.
+
+Run: sudo postmap /etc/postfix/sasl/sasl_passwd to build the hash file sasl_passwd.db.
 
 
 
