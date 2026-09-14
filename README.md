@@ -211,6 +211,12 @@ To test sending a print job from another machine, you can pipe a file directly u
 ```
 nc -N RASPBERRY_PI_IP 9100 < postscripttestfile.ps
 ```
+## Apple IIgs configuration for TCPIP Printing
+TreeHugers. http://krue.net/treehugger/  
+https://www.whatisthe2gs.apple2.org.za/files/Harmonie21/2Image/Harmonie.zip  
+https://www.whatisthe2gs.apple2.org.za/files/Harmonie21/Manual/Harmonie-Manual.pdf  
+http://www.apple2works.com/directconnectpostscriptdriver/  
+
 # Mail server
 ## postfix
 1. Follow this guide: https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md  
