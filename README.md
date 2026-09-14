@@ -218,20 +218,24 @@ nc -N RASPBERRY_PI_IP 9100 < postscripttestfile.ps
 ```
 <<username>>: <<name>>@gmail.com
 ```
-generate `/etc/aliases.db`:
+3. generate `/etc/aliases.db`:
 ```
 postalias /etc/aliases
 ```
-3. Create the directory /etc/postfix/sasl.
-Create the file /etc/postfix/sasl/sasl_passwd as follows:
+4. Create the directory `/etc/postfix/sasl`.
+5. Create the file `/etc/postfix/sasl/sasl_passwd` as follows:
 ```
 [smtp.gmail.com]:587 <<name>>@gmail.com:xxxx xxxx xxxx xxxx
 ```
 where <<name>> is your Gmail account name and xxxx xxxx xxxx xxxx is the App Password Google gave you.  
 To get the google app app password: https://myaccount.google.com/apppasswords  
-to build the hash file sasl_passwd.db, run:
+to build the hash file `sasl_passwd.db`, run:
 ```
 sudo postmap /etc/postfix/sasl/sasl_passwd
+```
+6. Now restart postfix
+```
+sudo systemctl restart postfix`
 ```
 
 
