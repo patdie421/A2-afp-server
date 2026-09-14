@@ -229,11 +229,11 @@ postalias /etc/aliases
 ```
 where `<<name>>` is your Gmail account name and xxxx xxxx xxxx xxxx is the App Password Google gave you.  
 To get the google app app password: https://myaccount.google.com/apppasswords  
-to build the hash file `sasl_passwd.db`, run:
+6. to build the hash file `sasl_passwd.db`, run:
 ```
 sudo postmap /etc/postfix/sasl/sasl_passwd
 ```
-6. Now restart postfix
+7. Now restart postfix
 ```
 sudo systemctl restart postfix
 ```
