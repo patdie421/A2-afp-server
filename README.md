@@ -294,7 +294,7 @@ sudo systemctl restart postfix
 ```
 ## dovecot
 1. Follow: https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md#dovecot  
-2. in file `/etc/dovecot/conf.d/10-auth.conf` add or update `auth_allow_cleartext`:
+2. in file `/etc/dovecot/conf.d/10-auth.conf` add or update `auth_allow_cleartext`
 ```
 auth_allow_cleartext = yes
 ```
