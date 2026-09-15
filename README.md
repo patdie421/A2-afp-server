@@ -250,11 +250,11 @@ sudo systemctl enable jetdirect-ps-redirect.socket
 sudo systemctl start jetdirect-ps-redirect.socket
 ```
 4. Verify the Setup  
-You can check if the socket is actively listening on port 9101 with this command:
+* You can check if the socket is actively listening on port 9101 with this command:
 ```
 sudo ss -tlnp | grep 9101
 ```
-To test sending a print job from another machine, you can pipe a file directly using nc (netcat):  
+* To test sending a print job from another machine, you can pipe a file directly using nc (netcat): 
 ```
 nc -N RASPBERRY_PI_IP 9101 < postscripttestfile.ps
 ```
