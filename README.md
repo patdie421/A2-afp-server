@@ -42,11 +42,11 @@ sudo touch /data/prints/PDF/.protected ; sudo chmod 000 /data/prints/PDF/.protec
 ```
 # File sharing
 ## AFP file server
-install netatalk
+1. install netatalk
 ```
 $ sudo apt-get install netatalk
 ```
-Add server name in global
+2. Add server name in global
 ```
 [Global]
 hostname = vandee2.afp
@@ -63,7 +63,7 @@ volume name = Data
 path = /data/prints/PDF
 volume name = PDF
 ```
-Restart netatalk
+3. Restart netatalk
 ```
 sudo systemctl restart netatalk
 ```
