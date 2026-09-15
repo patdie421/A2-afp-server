@@ -107,17 +107,17 @@ sudo smbpasswd -a <username>
 ```
 # Printers
 ## cups and cups-pdf
-Install packages
+1. Install packages
 ```
 sudo apt-get install cups printer-driver-cups-pdf
 ```
-add or modify lines in `/etc/cups/cupsd.conf`
+2. add or modify lines in `/etc/cups/cupsd.conf`
 ```
 #Listen localhost:631
 Port 631
 Browsing On
 ```
-add or modify lines in `/etc/cups/cups-pdf.conf`
+3. add or modify lines in `/etc/cups/cups-pdf.conf`
 ```
 Out /data/prints/PDF
 Label 1
@@ -125,21 +125,22 @@ UserUMask 0000
 Grp lpadmin
 DecodeHexStrings 1
 ```
-add or modify lines in `/etc/cups/printers.conf`
+4. add or modify lines in `/etc/cups/printers.conf`
 ```
 <DefaultPrinter LaserWriter-PDF>
 Info LaserWriter-PDF
 Shared Yes
 ```
-Restart cups and netatalk to resync cups printers.
+5. Restart cups and netatalk to resync cups printers
 ```
 sudo systemctl restart cups
 sudo systemctl restart Netatalk
 ```
 ## LaserJet emulation
 ### build gpcl6
-Download source: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases
+1. Download source: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases
 Get last release of `ghostpdl` (https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10080/ghostpdl-10.08.0.tar.gz)
+2. extract, build and install
 ```
 tar xvzf ghostpdl-10.08.0.tar.gz
 cd ghostpdl-10.08.0
@@ -148,7 +149,7 @@ make
 sudo make install
 ```
 ### pclprint.sh script
-Add this script to `/etc` direction as `pclprint.sh`
+1. Add this script to `/etc` direction as `pclprint.sh`
 ```
 DATE=$(date +"%Y%m%d-%H%M%S")
 FILENAME=/data/prints/PDF/"jetdirect-$DATE".pdf
