@@ -8,7 +8,7 @@ Here are some planned features:
 * Mail server for Apple IIgs SAM2 mail client (https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md) [done].
 * Web proxy for HTTPS/HTTP conversion and HTML simplification (https://github.com/rdmark/macproxy_classic ?) [to do].
 
-The server will be installed on Raspberry OS
+The server will be installed on Raspberry OS but should work on other debian linux.
 
 # OS configuration
 ## SDCARD creation
