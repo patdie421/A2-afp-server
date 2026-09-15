@@ -68,17 +68,17 @@ volume name = PDF
 sudo systemctl restart netatalk
 ```
 ## SMB file server
-Install samba:
+1. Install samba
 ```
 sudo apt-get install samba samba-vfs-modules
 ```
-Add to `smb.conf` file [global] section :
+2. Add to `smb.conf` file [global] section :
 ```
 [global]
 vfs objects = catia fruit streams_xattr
 fruit:encoding = native
 ```
-Add shares to end of `smb.conf` file:
+3. Add shares to end of `smb.conf` file:
 ```
 [install]
    path = /data/shares/install/
@@ -97,11 +97,11 @@ Add shares to end of `smb.conf` file:
    read only = no
    public = yes
 ```
-Restart smbd
+4. Restart smbd
 ```
 sudo systemctl restart smbd
 ```
-Create smb password for users
+5. Create smb password for users
 ```
 sudo smbpasswd -a <username>
 ```
