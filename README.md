@@ -51,7 +51,7 @@ $ sudo apt-get install netatalk
 [Global]
 hostname = vandee2.afp
 ```
-Add shared directories to `afp.conf`:
+3. Add shared directories to `afp.conf`:
 ```
 [install]
 path = /data/shares/install
@@ -63,7 +63,7 @@ volume name = Data
 path = /data/prints/PDF
 volume name = PDF
 ```
-3. Restart netatalk
+4. Restart netatalk
 ```
 sudo systemctl restart netatalk
 ```
