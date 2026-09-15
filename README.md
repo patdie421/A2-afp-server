@@ -6,7 +6,7 @@ Here are some planned features:
 * Appletalk Laserwriter emulation for printing to PDF file (cups + cups-pdf) [done].
 * Direct "raw" printer (JetDirect or AppSocket printing) for TreeHugger (https://krue.net/treehugger/) to PDF (LaserJet PCL and/or Laserwriter PS) [done].
 * Mail server for Apple IIgs SAM2 mail client (https://github.com/bobbimanners/emailler/blob/master/README-gmail-gateway.md) [done].
-* Web proxy for HTTPS/HTTP conversion and HTML simplification (https://github.com/rdmark/macproxy_classic) [to do].
+* Web proxy for HTTPS/HTTP conversion and HTML simplification (https://github.com/rdmark/macproxy_classic ?) [to do].
 
 The server will be installed on Raspberry OS
 
